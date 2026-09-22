@@ -200,6 +200,14 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 .detail-item .label { font-size: 12px; color: var(--text-muted); margin-bottom: 3px; }
 .detail-item .value { font-size: 14px; font-weight: 500; }
 
+.detail-item-full {
+  width: 100%;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.detail-item-full .value { word-break: break-word; line-height: 1.5; }
+
 .note {
   margin: 0;
   font-size: 14px;
