@@ -38,9 +38,11 @@ async function loadData() {
 function showActive(record) {
   document.getElementById('active-name').textContent = record.name;
   document.getElementById('active-id').textContent = 'ID ' + record.id;
-  document.getElementById('active-since').textContent = record.memberSince || '—';
+  document.getElementById('active-since').textContent = record.rejoinedOn || '—';
   document.getElementById('active-program').textContent = record.program || '—';
   document.getElementById('active-yr').textContent = record.year || '—';
+  document.getElementById('active-member-id').textContent = record.cssMemberId || '—';
+  document.getElementById('active-remarks').textContent = record.remarks || '—';
   hideAllResults();
   resultActive.classList.add('show');
 }
