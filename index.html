@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Membership Checker — Computer Students' Society</title>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg class="circuit-bg" viewBox="0 0 800 1200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g stroke="#F2A93C" stroke-width="1.4" fill="none">
+    <path d="M0 80 H140 V180 H320 V60 H520 V240 H800"/>
+    <path d="M0 320 H90 V420 H260 V520 H60 V680"/>
+    <path d="M800 420 H620 V300 H460 V500 H700 V620 H540 V800"/>
+    <path d="M0 900 H180 V1000 H400 V860 H600 V1050 H800"/>
+    <path d="M240 0 V140 H120 V260"/>
+    <path d="M480 1200 V1020 H660 V880"/>
+  </g>
+  <g fill="#F2A93C">
+    <circle cx="140" cy="80" r="4"/><circle cx="320" cy="180" r="4"/><circle cx="520" cy="60" r="4"/>
+    <circle cx="90" cy="320" r="4"/><circle cx="260" cy="420" r="4"/><circle cx="620" cy="420" r="4"/>
+    <circle cx="460" cy="300" r="4"/><circle cx="700" cy="500" r="4"/><circle cx="180" cy="900" r="4"/>
+    <circle cx="400" cy="1000" r="4"/><circle cx="600" cy="860" r="4"/><circle cx="240" cy="140" r="4"/>
+    <circle cx="660" cy="1020" r="4"/>
+  </g>
+</svg>
+
+<div class="page">
+
+  <header>
+    <img class="mark" src="logo.png" alt="Computer Students' Society seal">
+    <div class="org-name">
+      Computer Students' Society<br>
+      <span class="year">Membership Checker</span>
+    </div>
+  </header>
+
+  <main>
+    <h1>Check your membership status</h1>
+    <p class="lede">Enter your ID number below to see if your membership is active and when it's valid from.</p>
+
+    <form id="check-form" autocomplete="off">
+      <div class="field">
+        <input type="text" id="id-input" placeholder="e.g. 26-5000-886" aria-label="ID number" required>
+      </div>
+      <button type="submit">Check status</button>
+    </form>
+    <p class="status-line" id="status-line">Loading member records…</p>
+
+    <div class="result" id="result-active">
+      <div class="result-top">
+        <div>
+          <div class="result-name" id="active-name"></div>
+          <div class="result-id" id="active-id"></div>
+        </div>
+        <span class="pill ok">Active member</span>
+      </div>
+      <div class="result-detail">
+        <div class="detail-item">
+          <div class="label">Member since</div>
+          <div class="value" id="active-since"></div>
+        </div>
+        <div class="detail-item">
+          <div class="label">Program</div>
+          <div class="value" id="active-program"></div>
+        </div>
+        <div class="detail-item">
+          <div class="label">Year</div>
+          <div class="value" id="active-yr"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result" id="result-pending">
+      <div class="result-top">
+        <div>
+          <div class="result-name" id="pending-name"></div>
+          <div class="result-id" id="pending-id"></div>
+        </div>
+        <span class="pill warn">Pending approval</span>
+      </div>
+      <p class="note">Your record exists but hasn't been approved yet. Contact your CSS officers if this seems wrong.</p>
+    </div>
+
+    <div class="result not-found" id="result-not-found">
+      <div class="result-top">
+        <span class="pill bad">Not found</span>
+      </div>
+      <p>We couldn't find that ID in our records. Double-check the number, or reach out to the officers if you believe this is an error.</p>
+    </div>
+  </main>
+
+  <footer>
+    This tool checks membership status only — no login or personal data entry required. For corrections to your record, contact your CSS officers.
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
